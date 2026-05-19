@@ -1,5 +1,5 @@
 import { expect } from "@playwright/test";
-import { BASE_URL } from "../data/Urls";
+import { BASE_URL } from "../data/urls";
 
 export class Login {
   constructor(page) {
