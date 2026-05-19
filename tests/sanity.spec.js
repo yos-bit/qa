@@ -1,13 +1,13 @@
 import { test, expect } from "@playwright/test";
-import { standerdUser, VALID_PASSWORD, VALID_USERS } from "../Data/users";
+import { standerdUser, VALID_PASSWORD, VALID_USERS } from "../data/users";
 import { CheckOutStepOne } from "../pages/CheckOutStepOne";
 import { CheckOutStepTwo } from "../pages/CheckOutStepTwo";
 import { CheckOutComplete } from "../pages/CheckOutComplete";
 import { Inventory } from "../pages/inventory";
 import { ShoppingCart } from "../pages/Cart";
-import { Urls } from "../Data/Urls";
+import { Urls } from "../data/urls";
 import { Login } from "../pages/Login";
-import { userDetails } from "../Data/details";
+import { userDetails } from "../data/details";
 
 const validUser = VALID_USERS.find((user) => user === "standard_user");
 

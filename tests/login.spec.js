@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { Login } from "../pages/Login";
-import { BASE_URL, Urls } from "../data/Urls";
+import { BASE_URL, Urls } from "../data/urls";
 import { VALID_PASSWORD, VALID_USERS, INVALID_USERS } from "../data/users";
 import { Inventory } from "../pages/Inventory";
 import { ERROR_MESSAGES } from "../data/errorMessages";
