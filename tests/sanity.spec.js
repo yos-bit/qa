@@ -1,28 +1,30 @@
 import { test, expect } from "@playwright/test";
-import { standerdUser } from "../Data/users";
+import { standerdUser, VALID_PASSWORD, VALID_USERS } from "../Data/users";
 import { CheckOutStepOne } from "../pages/CheckOutStepOne";
 import { CheckOutStepTwo } from "../pages/CheckOutStepTwo";
 import { CheckOutComplete } from "../pages/CheckOutComplete";
 import { Inventory } from "../pages/inventory";
 import { ShoppingCart } from "../pages/Cart";
 import { Urls } from "../Data/Urls";
-import { LoginPage } from "../pages/LoginPage";
+import { Login } from "../pages/Login";
 import { userDetails } from "../Data/details";
+
+const validUser = VALID_USERS.find((user) => user === "standard_user");
 
 test.describe("Sanity Tests", () => {
   test.beforeEach(async ({ page }) => {
-    const loginPage = new LoginPage(page);
+    const loginPage = new Login(page);
     await loginPage.openLoginPage();
-    await loginPage.login(standerdUser.username, standerdUser.password);
+    await loginPage.login(validUser, VALID_PASSWORD);
     const inventory = new Inventory(page);
     await expect(page).toHaveURL(Urls.INVENTORY_URL);
     await expect(inventory.title).toHaveText("Products");
   });
 
-  test("Login with standard_user", async ({ page }) => {
-    const loginPage = new LoginPage(page);
+  test("Basic purchase functionality", async ({ page }) => {
+    const loginPage = new Login(page);
     await loginPage.openLoginPage();
-    await loginPage.login(standerdUser.username, standerdUser.password);
+    await loginPage.login(validUser, VALID_PASSWORD);
     await expect(page).toHaveURL(Urls.INVENTORY_URL);
 
     const inventory = new Inventory(page);
