@@ -1,9 +1,9 @@
 import { test, expect } from "@playwright/test";
-import { standerdUser, VALID_PASSWORD, VALID_USERS } from "../data/users";
+import { VALID_PASSWORD, VALID_USERS } from "../data/users";
 import { CheckOutStepOne } from "../pages/CheckOutStepOne";
 import { CheckOutStepTwo } from "../pages/CheckOutStepTwo";
 import { CheckOutComplete } from "../pages/CheckOutComplete";
-import { Inventory } from "../pages/inventory";
+import { Inventory } from "../pages/Inventory";
 import { ShoppingCart } from "../pages/Cart";
 import { Urls } from "../data/urls";
 import { Login } from "../pages/Login";
